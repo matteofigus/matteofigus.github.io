@@ -56,15 +56,16 @@
 
 			.reveal h1 {
 				font-family: "Merriweather", sans-serif;
-				font-size: 2.60em;
+				font-size: 1.78em;
 			}
 
 			.reveal h2 {
 				font-family: "Merriweather", sans-serif;
-				font-size: 2em;
+				font-size: 1.5em;
 			}
 
 			.reveal h3 {
+        font-size: 1em;
 				margin-top: -30px;
 				margin-bottom: 30px;
 			}
@@ -118,13 +119,17 @@
 		<div class="reveal">
 
 			<div class="slides">
-				<section data-background="#DA3743" class="red-slide">
-					<h1>OpenComponents</h1>
-					<h3>github.com/opentable/oc</h3>
-					<p>
-						<small>Matteo Figus / <a href="http://twitter.com/matteofigus">@matteofigus</a></small>
-					</p>
-				</section>
+        <section data-background="#DA3743" class="red-slide">
+          <h1>Components as microservices</h1>
+          <h3>SOA in the front-end world</h3>
+          <p>
+            <small>Matteo Figus / <a href="http://twitter.com/matteofigus">@matteofigus</a></small>
+          </p>
+        </section>
+
+        <section>
+          <img src="img/sponsors.png" />
+        </section>
 
 				<section>
 					<h2>Who am I</h2>
@@ -135,13 +140,13 @@
 					</p>
 				</section>
 
-				<section>
-					<img src="img/opentable.png" style="border:0;box-shadow:0 0 0;background: transparent;" />
-					<p>Restaurant Reservations - Free • Instant • Confirmed</p>
-					<p class="fragment"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> more than 32K restaurants worldwide</p>
-					<p class="fragment"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> more than 16M reservations every month</p>
-					<p class="fragment"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> more than 450K reviews per month</p>
-				</section>
+        <section>
+          <img src="img/opentable.png" style="border:0;box-shadow:0 0 0;background: transparent;" />
+          <p>Restaurant Reservations - Free • Instant • Confirmed</p>
+          <p class="fragment"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> more than 32K restaurants worldwide</p>
+          <p class="fragment"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> more than 16M reservations every month</p>
+          <p class="fragment"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> more than 450K reviews per month</p>
+        </section>
 
 				<section data-background="#DA3743" class="red-slide">
 					<h1>Dismantling the monolith</h1>
@@ -275,7 +280,6 @@
 
         <section data-background="#DA3743" class="red-slide">
           <h1>Demo time!</h1>
-          <img src="img/mind-blown.gif" />
         </section>
 
 				<section>
@@ -387,7 +391,8 @@ client.renderComponent('hello-world', function(err, componentHtml){
 					<h2>Conclusions</h2>
 
 					<p>SOA is not just about code</p>
-					<p class="fragment">We need love when dealing with dependencies</p>
+          <p class="fragment">Test, test, test</p>
+          <p class="fragment">Failure is a feature</p>
 					<p class="fragment">Componentise all the web!</p>
 
 				</section>
@@ -442,7 +447,8 @@ client.renderComponent('hello-world', function(err, componentHtml){
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-62543780-1', 'auto');
       ga('send', 'pageview');
-    </script>
+
+		</script>
 
 	</body>
 </html>
