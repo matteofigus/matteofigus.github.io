@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700|Merriweather' rel='stylesheet' type='text/css' />
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+
+			body {
+				font-family: "Source Sans Pro", sans-serif;
+				background: #F3F2F1 !important;
+				color: #333333;
+				text-shadow: 0 0 0 0;
+			}
+
+			.reveal section img {
+				border:0;box-shadow:0 0 0;
+				background: transparent;
+			}
+
+			.reveal h1, .reveal h2, .reveal h3 {
+				font-family: "Source Sans Pro", sans-serif;
+				text-shadow: 0 0 0;
+				text-transform: none;
+			}
+
+			.reveal h1 {
+				font-family: "Merriweather", sans-serif;
+				font-size: 1.5em;
+			}
+
+			.reveal h2 {
+				font-family: "Merriweather", sans-serif;
+				font-size: 1.5em;
+			}
+
+			.reveal h3 {
+        font-size: 1em;
+				margin-top: -30px;
+				margin-bottom: 30px;
+			}
+
+			.glyphicon {
+			  font-family: 'Glyphicons Halflings' !important;
+			}
+
+			.red-slide h1,
+			.red-slide h2,
+			.red-slide h3,
+			.red-slide p {
+				color: #FFF;
+			}
+
+			.reveal .footer {
+			  position: absolute;
+			  bottom: 1em;
+			  left: 1em;
+			  font-size: 0.5em;
+			}
+
+			.nomarginp {
+				margin-top: -20px !important;
+			}
+
+			.red {
+				color: #C50000 !important;
+			}
+
+			.green {
+				color: #00A800 !important;
+			}
+			.reveal .progress span {
+				background-color: red;
+			}
+
+			.reveal a {
+				color: #FFF;
+				text-shadow: 0 0 0 0;
+			}
+
+			.reveal small {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+        <section data-background="#DA3743" class="red-slide">
+          <h1>OpenComponents as microservices</h1>
+          <h3>SOA in the front-end world</h3>
+          <p>
+            <small>Matteo Figus / <a href="http://twitter.com/matteofigus">@matteofigus</a></small>
+          </p>
+        </section>
+
+				<section>
+					<h2>@matteofigus</h2>
+					<p>
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Coding, technology, conferences <br />
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span> London, UK <br />
+						<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> OpenTable
+					</p>
+				</section>
+
+        <section>
+          <img src="img/opentable.png" style="border:0;box-shadow:0 0 0;background: transparent;" />
+          <p>Restaurant Reservations - Free • Instant • Confirmed</p>
+          <p class="fragment"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> more than 32K restaurants worldwide</p>
+          <p class="fragment"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> more than 16M reservations every month</p>
+          <p class="fragment"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> more than 450K reviews per month</p>
+        </section>
+
+        <section>
+          <img src="img/opentable.png" style="border:0;box-shadow:0 0 0;background: transparent;" />
+          <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Europe, North and South America, Asia</p>
+          <p class="fragment"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> millions of requests per minute</p>
+          <p class="fragment"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> more than 50 engineers make changes every day</p>
+        </section>
+
+				<section data-background="#DA3743" class="red-slide">
+					<h1>The Microsites architecture</h1>
+					<h3>Componentisation - Step #1</h3>
+				</section>
+
+				<section>
+					<h2>Microsites</h2>
+					<img src="img/microsites.png" />
+				</section>
+
+        <section>
+          <h2>www.opentable.com/san-francisco-restaurants</h2>
+          <ul>
+            <li class="fragment">"start" microsite</li>
+            <li class="fragment">San Francisco metro</li>
+            <li class="fragment">=> http://start-123/?domain=com&metro=4</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Microsites</h2>
+          <ul>
+            <li class="fragment">Team of 2 to 4 devops</li>
+            <li class="fragment">Minimal complexity</li>
+            <li class="fragment">Minimal dependencies</li>
+            <li class="fragment">Easier to test, maintain, extend</li>
+            <li class="fragment">Multiple daily deployments</li>
+            <li class="fragment">Ownership</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <h2>The common parts</h2>
+          <img src="img/home.png" />
+        </section>
+
+        <section data-transition="fade">
+          <h2>The common parts</h2>
+          <img src="img/home_bw.png" />
+        </section>
+
+        <section>
+          <h2>Microsite rendering (server-side)</h2>
+          <ul>
+            <li class="fragment">http://search-456/?metro=4&dateTime=2015-10-23T19:00</li>
+            <li class="fragment">Execute logic</li>
+            <li class="fragment">GET shared components from Components API</li>
+            <pre class="fragment"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- css component --&gt;
+    &lt;!-- js head component --&gt;
+    ...
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- header component --&gt;
+    ...
+    &lt;!-- footer component --&gt;
+    &lt;!-- js body component --&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Components for common UI elements</h2>
+            <p>$ curl http://components-789/header<span class="fragment">/1.X.X</span><span class="fragment">/?userType=Admin&metroId=72</span>
+              <span class="fragment">-H Accept-Language:en-US</span></p>
+            <pre class="fragment"><code class="http">{
+  "href": "http://components-789/header/1.X.X?userType=Admin&metroId=72",<span class="fragment">aefaef</span>
+  "html": "&lt;div&gt;&lt;img src=\&quot;//srs.opentable.com/logo.jpg\&quot; /&gt;...&lt;/div&gt;"
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Microsites + Shared components</h2>
+          <p class="fragment green"><span class="glyphicon glyphicon-thumbs-up"></span> Consistency </p>
+          <p class="fragment green nomarginp"><span class="glyphicon glyphicon-thumbs-up"></span> Coordination</p>
+          <p class="fragment green nomarginp"><span class="glyphicon glyphicon-thumbs-up"></span> Optimal front-end loading </p>
+          <p class="fragment green nomarginp"><span class="glyphicon glyphicon-thumbs-up"></span> Easy to spin-up new microsites</p>
+        </section>
+
+				<section data-background="#DA3743" class="red-slide">
+					<h1>OpenComponents</h1>
+					<h3>A framework for developing and deploying HTML components</h3>
+				</section>
+
+				<section>
+					<h2>github.com/opentable/oc</h2>
+					<img src="img/OC.png" />
+				</section>
+
+        <section data-background="#DA3743" class="red-slide">
+          <h1>Demo time!</h1>
+        </section>
+
+				<section>
+					<h2>Getting started</h2>
+					<pre><code class="shell">$ npm install -g oc
+
+$ mkdir demo &amp;&amp; cd demo
+$ oc init test-component jade
+$ echo 'div this is my component' > test-component/template.jade
+
+$ oc dev . 3030
+$ oc preview http://localhost:3030/test-component
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Ship it!</h2>
+					<pre><code class="shell">$ oc registry add http://oc-registry.herokuapp.com
+$ oc publish /test-component
+
+$ oc preview http://oc-registry.herokuapp.com/test-component
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Static resources? Let me handle this!</h2>
+					<pre><code class="javascript">// template.jade
+
+img(src=staticPath+'img/img.jpg')
+
+// server.js
+
+module.exports.data = function(context, cb){
+  cb(null, {
+    staticPath: context.staticPath
+  });
+};
+</code></pre>
+				</section>
+
+        <section>
+          <h2>Server-side rendered components</h2>
+          <pre><code class="sh">$ curl http://oc-registry.com/hello-world
+
+{
+  "href": "https://oc-registry.com/hello-world",
+  "version": "1.0.0",
+  "requestVersion": "",
+  "html": "&lt;div&gt;hello John Doe&lt;/div&gt;",
+  "type": "oc-component",
+  "renderMode": "rendered"
+}</code></pre>
+        </section>
+
+				<section>
+					<h2>Client-side rendering</h2>
+					<pre><code class="html">&lt;html&gt;
+  &lt;body&gt;
+    ...
+    &lt;oc-component href="http://oc-registry.com/component/1.X.X/?a=b"&gt;
+    &lt;/oc-component&gt;
+    ...
+    &lt;script src="http://oc-registry.com/oc-client/client.js"&gt;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				</section>
+
+        <section>
+          <h2>Server-side pre-rendered components</h2>
+          <pre><code class="sh">$ curl http://oc-registry.com/hello-world 
+-H Accept:application/vnd.oc.prerendered+json
+{
+  "href": "https://oc-registry.com/hello-world",
+  "version": "1.0.0",
+  "requestVersion": "",
+  "data": {
+    "name": "John doe"
+  },
+  "template": {
+    "src": "https://s3.amazonaws.com/your-s3-bucket/components/hello-world/1.0.0/template.js",
+    "type": "handlebars",
+    "key": "cad2a9671257d5033d2abfd739b1660993021d02"
+  },
+  "type": "oc-component",
+  "renderMode": "pre-rendered"
+}</code></pre>
+        </section>
+
+				<section>
+					<h2>Server-side rendering with node.js</h2>
+					<h3>npm install oc-client --save</h3>
+					<pre><code class="javascript">var Client = require('oc-client'),
+    client = new Client({
+     registries: ['http://oc-registry.com/'],
+     components: {'hello-world': '~1.0.0'}
+    });
+
+client.renderComponent('hello-world', function(err, componentHtml){
+  console.log(componentHtml); // => rendered html
+});
+</code></pre>
+				</section>
+
+        <section>
+          <h2>Features</h2>
+          <p align="left" class="nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Enables people to create new components independently and publish them</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Granular ownership</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Performances</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Robustness</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Serve as framework for experimenting and A/B testing new ideas in the front-end</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Microsites have control</p>
+        </section>
+
+        <section data-background="#DA3743" class="red-slide">
+          <h1>What is a microservice?</h1>
+          <h3>Good question, dear</h3>
+        </section>
+
+        <section>
+          <h2>The art of destroying software</h2>
+          <iframe src="https://player.vimeo.com/video/108441214" style="width:100%;height:400px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <p>https://player.vimeo.com/video/108441214</p>
+        </section>
+
+        <section>
+          <h2>Microservices<span class="fragment"> / Microsites</span><span class="fragment"> / Microteams</span></h2>
+          <ul>
+            <li class="fragment">Minimal dependencies</li>
+            <li class="fragment">Minimal complexity</li>
+            <li class="fragment">Closer to Business</li>
+            <li class="fragment">Empowered to handle ownership</li>
+            <li class="fragment">Optimised for resilience</li>
+          </ul>
+        </section>
+
+				<section>
+					<h2>Conclusions</h2>
+
+					<p>SOA is not just about code</p>
+          <p class="fragment">Test, test, test</p>
+          <p class="fragment">Failure is a feature</p>
+					<p class="fragment">Componentise all the web!</p>
+
+				</section>
+
+				<section data-background="#DA3743" class="red-slide">
+					<h2>Thank you</h2>
+
+					<p><a href="http://bit.ly/oc-github">github.com/opentable/oc</a></p>
+					<p><a href="https://github.com/matteofigus/oc-components-examples">github.com/matteofigus/oc-components-examples</a></p>
+          <p><a href="http://tech.opentable.co.uk/blog/2015/02/09/dismantling-the-monolith-microsites-at-opentable/">http://tech.opentable.co.uk/blog/2015/02/09/dismantling-the-monolith-microsites-at-opentable/</a></p>
+
+					<br />
+					<p>follow me on twitter - <a href="https://twitter.com/matteofigus">@matteofigus</a></p>
+					<p><a href="https://matteofigus.github.io">matteofigus.github.io</a></p>
+				</section>
+
+			</div>
+			<div class='footer'>
+		     <img src="img/logo.png" style="border:0;background:transparent;box-shadow:0 0 0;width:18%;float:left" /><span style="float:left;padding-left:10px;color:red;">@matteofigus</span>
+		  </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
