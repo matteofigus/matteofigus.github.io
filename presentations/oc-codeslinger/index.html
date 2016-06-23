@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>OC workshop - Code slinger</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700|Merriweather' rel='stylesheet' type='text/css' />
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+
+			body {
+				font-family: "Source Sans Pro", sans-serif;
+				background: #F3F2F1 !important;
+				color: #333333;
+				text-shadow: 0 0 0 0;
+			}
+
+			.reveal section img {
+				border:0;box-shadow:0 0 0;
+				background: transparent;
+			}
+
+			.reveal h1, .reveal h2, .reveal h3 {
+				font-family: "Source Sans Pro", sans-serif;
+				text-shadow: 0 0 0;
+				text-transform: none;
+			}
+
+			.reveal h1 {
+				font-family: "Merriweather", sans-serif;
+				font-size: 1.5em;
+			}
+
+			.reveal h2 {
+				font-family: "Merriweather", sans-serif;
+				font-size: 1.5em;
+			}
+
+			.reveal h3 {
+        font-size: 1em;
+				margin-top: -30px;
+				margin-bottom: 30px;
+			}
+
+			.glyphicon {
+			  font-family: 'Glyphicons Halflings' !important;
+			}
+
+			.red-slide h1,
+			.red-slide h2,
+			.red-slide h3,
+			.red-slide p {
+				color: #FFF;
+			}
+
+			.reveal .footer {
+			  position: absolute;
+			  bottom: 1em;
+			  left: 1em;
+			  font-size: 0.5em;
+			}
+
+			.nomarginp {
+				margin-top: -20px !important;
+			}
+
+			.red {
+				color: #C50000 !important;
+			}
+
+			.green {
+				color: #00A800 !important;
+			}
+			.reveal .progress span {
+				background-color: red;
+			}
+
+			.reveal a {
+				color: #FFF;
+				text-shadow: 0 0 0 0;
+			}
+
+			.reveal small {
+				font-weight: bold;
+			}
+
+      .old-school,
+      .old-school h1,
+      .old-school h2 {
+        font-family: 'Comic Sans MS', cursive, sans-serif !important;
+        color: #17ff2e;
+      }
+
+      .travolta {
+        width: 200px;
+        float: right;
+      }
+
+      .old-school p {
+        font-size: 27px;
+        text-align: left;
+      }
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+        <section data-background="img/bg.gif" class="old-school">
+          <h1>OpenComponents workshop</h2>
+          <marquee scrollamount="20" style="font-size: 18px;">
+            <h2 style="color: #ee82ee;">we build <i>modern</i> web applications in this workshop</h3>
+          </marquee>
+
+          <div style="width:100%">
+
+            <p>
+              <img src="img/new.gif"/> Grab your <img src="img/coffee.gif" /> we are going to <b>Code</b> here.
+              <br>
+              <img src="img/new.gif"/> But coding is not mandatory, you can just listen and watch.
+              <br>
+              <img src="img/new.gif"/> If you want to code, you will need <b>0.10.40 <= node < 6</b> and a laptop with any editor.
+              <br>
+              <img src="img/new.gif"/> While you wait, then install oc: <i>[sudo] npm i -g oc</i> 
+            </p>
+
+            <img src="img/travolta.gif" class="travolta" />
+
+          </div>
+
+          <br><br>
+          <img src="img/badge1.gif" />
+          <img src="img/badge2.gif" />
+          <img src="img/badge3.gif" />
+          <img src="img/badge4.gif" />
+          <img src="img/badge5.gif" />
+
+        </section>
+
+        <section>
+          <h2>@matteofigus</h2>
+
+          <p>
+            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Coding, technology, conferences <br />
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span> London, UK <br />
+            <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> OpenTable
+          </p>
+          <br>
+          <div class="fragment">
+            <h2>With me today:</h2>
+            @JankowiakMaria <br />
+            @antwhite <br />
+          </div>
+        </section>
+
+        <section>
+          <h2>Why are we here</h2>
+          <ul>
+            <li>Introduction</li>
+            <li class="fragment">Quick demo</li>
+            <li class="fragment">Workshop</li>
+            <li class="fragment">Happy ending</li>
+          </ul>
+        </section>
+
+        <section data-background="#DA3743" class="red-slide">
+          <h2>OpenComponents</h2>
+          <h3>Services as interfaces: why?</h3>
+        </section>
+
+        <section>
+          <h2>What is an OpenComponent?</h2>
+          <pre><code class="html">&lt;html&gt;
+  &lt;body&gt;
+    ...
+    &lt;oc-component href="//oc-registry.com/component/1.X.X/?a=b"&gt;
+      &lt;div&gt;hello John Doe&lt;/div&gt;
+    &lt;/oc-component&gt;
+    ...
+    &lt;script src="//oc-registry.com/oc-client/client.js"&gt;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Still the same component</h2>
+          <pre><code class="sh">$ curl https://oc-registry.com/component/1.X.X/?a=b
+
+{
+  "href": "https://oc-registry.com/component/1.X.X/?a=b",
+  "version": "1.0.0",
+  "requestVersion": "1.X.X",
+  "html": "&lt;div&gt;hello John Doe&lt;/div&gt;",
+  "type": "oc-component",
+  "renderMode": "rendered"
+}</code></pre>
+        </section>
+
+        <section data-transition="fade">
+          <h2>Components in action</h2>
+          <img src="img/home.png" />
+        </section>
+
+        <section data-transition="fade">
+          <h2>Components in action</h2>
+          <img src="img/home_bw.png" />
+        </section>
+
+        <section>
+          <h2>The header example</h2>
+            <p>$ curl https://oc-registry.internal.com/header<span class="fragment">/1.X.X</span><span class="fragment">/?userType=Admin&country=UK</span>
+              <span class="fragment">-H Accept-Language:ja-JP</span></p>
+            <pre class="fragment"><code class="http">{
+  "href": "http://components-789/header/1.X.X?userType=Admin&country=UK",
+  "html": "&lt;div&gt;&lt;img src=\&quot;//srs.opentable.com/logo.jpg\&quot; /&gt;...&lt;/div&gt;"
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>github.com/opentable/oc</h2>
+          <img src="img/oc.png" />
+        </section>
+
+        <section data-background="#DA3743" class="red-slide">
+          <h1>Demo time!</h1>
+        </section>
+
+				<section>
+          <h2 style="font-size: 1.3em;margin-bottom: 55px;">github.com/matteofigus/oc-workshop</h2>
+          <h3>Getting started</h3>
+					<pre><code class="shell">$ npm install -g oc
+
+$ mkdir components &amp;&amp; cd components
+$ oc init test-component jade
+$ echo 'div this is my component' > test-component/template.jade
+
+$ oc dev . 3030
+$ oc preview http://localhost:3030/test-component
+</code></pre>
+				</section>
+
+				<section>
+          <h2 style="font-size: 1.3em;margin-bottom: 55px;">github.com/matteofigus/oc-workshop</h2>
+					<h3>Ship it!</h3>
+					<pre><code class="shell">$ oc registry add http://oc-registry.herokuapp.com
+$ oc publish /test-component
+
+$ oc preview http://oc-registry.herokuapp.com/test-component
+</code></pre>
+				</section>
+
+				<section>
+          <h2 style="font-size: 1.3em;margin-bottom: 55px;">github.com/matteofigus/oc-workshop</h2>
+					<h3>Static resources</h3>
+          <h3></h3>
+					<pre><code class="javascript">// template.jade
+
+img(src=staticPath+'img/img.jpg')
+
+// server.js
+
+module.exports.data = function(context, cb){
+  cb(null, { staticPath: context.staticPath });
+};
+</code></pre>
+				</section>
+
+        <section>
+          <h2 style="font-size: 1.3em;margin-bottom: 55px;">github.com/matteofigus/oc-workshop</h2>
+          <h3>Links and resources</h3>
+          <ul>
+            <li>https://github.com/opentable/oc/tree/master/docs</li>
+            <li>https://github.com/matteofigus/oc-components-examples</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Should I use OC?</h2>
+          <p align="left" class="nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Enables people to create new components independently and publish them</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Flexibility (unopinionated)</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Granular ownership</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Resiliency</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Performance</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Robustness</p>
+          <p align="left" class="fragment nomarginp green"><span class="glyphicon glyphicon-thumbs-up"></span> Serve as framework for experimenting and A/B testing new ideas in the front-end</p>
+        </section>
+
+				<section data-background="#DA3743" class="red-slide">
+					<h2>Thank you</h2>
+
+					<p><a href="http://bit.ly/oc-github">github.com/opentable/oc</a></p>
+					<p><a href="https://github.com/matteofigus/awesome-oc">github.com/matteofigus/awesome-oc</a></p>
+
+					<br />
+					<p>follow me on twitter - <a href="https://twitter.com/matteofigus">@matteofigus</a></p>
+					<p><a href="https://matteofigus.github.io">matteofigus.github.io</a></p>
+				</section>
+
+			</div>
+			<div class='footer'>
+		     <img src="img/logo.png" style="border:0;background:transparent;box-shadow:0 0 0;width:18%;float:left" /><span style="float:left;padding-left:10px;color:red;">@matteofigus</span>
+		  </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+      var t;
+      Reveal.addEventListener( 'slidechanged', function(event){
+
+        var start = 11,
+            end = 14,
+            timeout = 15000;
+        
+        if(event.indexh >= start && event.indexh < end){
+          if(t){ clearTimeout(t); }
+          t = setTimeout(function() {
+            Reveal.next();
+          }, timeout);
+        } else if(event.indexh === end){
+          if(t){ clearTimeout(t); }
+          t = setTimeout(function(){
+            Reveal.slide(start);
+          }, timeout);
+        } else if(event.indexh === (end+1) || event.indexh === (start-1)){
+          clearTimeout(t);
+        }
+      });
+      
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-62543780-1', 'auto');
+      ga('send', 'pageview');
+
+		</script>
+
+	</body>
+</html>
